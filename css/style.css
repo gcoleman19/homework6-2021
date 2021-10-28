@@ -17,9 +17,9 @@ nav ul li a:visited{
 
 header{
     flex-flow: wrap row;
-    justify-content: flex-start;
+    justify-content: center;
     position: sticky;
-    align-items:flex-start;
+    align-items: flex-start;
 }
 
 header:first-of-type{
