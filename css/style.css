@@ -4,17 +4,22 @@ body{
     background-color: #f1f1f1;
 }
 
-header{
-    flex-flow: wrap column;
-    justify-content: flex-start;
-    position: sticky;
-}
-
 .nav_links{
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
+}
+
+nav ul li a:visited{
+    color: #0000EE;
+}
+
+header{
+    flex-flow: wrap row;
+    justify-content: flex-start;
+    position: sticky;
+    align-items:flex-start;
 }
 
 header:first-of-type{
@@ -26,11 +31,21 @@ header:first-of-type{
     overflow-y:auto;
 }
 
-nav ul li a:visited{
-    color: #0000EE;
+.pricing{
+    display: flex;
+    align-items: center;
+    flex-flow: wrap column;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.card > header{
+.card{
+    display: flex;
+    flex-basis: 450px;
+    flex-direction: column;
+}
+
+.card header{
     background-color: #288088;
     border: 2px solid #45ADAD;
     padding-top: 20px;
@@ -39,32 +54,18 @@ nav ul li a:visited{
     border-top-right-radius: 7px;
 }
 
-.pricing{
-    display: flex;
-    flex-flow: wrap column;
-    flex-basis: 450px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.card{
-    flex-basis: 450px;
-    display: flex;
-    flex-direction: column;
-}
-
-.gallery{
-    display: flex;
-    flex-flow: wrap row;
-    justify-content: center;
-    align-items: center;
-}
-
 .gallery img{
     border: solid 10px #50c7c7;
     margin: 10px;
     width: 300px;
+}
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 #logo{
@@ -125,9 +126,9 @@ body{
 
 .nav_links{
     display: flex;
-    justify-content: space-around;   
     flex-direction: row;
     column-gap: 175px;
+    justify-content: space-around;   
 }
 
 .pricing{
