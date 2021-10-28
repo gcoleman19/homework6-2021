@@ -1,0 +1,145 @@
+body{
+    font-family: 'Alegreya Sans SC', serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+header{
+    flex-flow: wrap column;
+    justify-content: flex-start;
+    position: sticky;
+    }
+
+.nav_links{
+    flex-wrap: wrap column;
+    justify-content: flex-end;
+    flex-basis: auto;
+    flex-direction: row;
+    overflow-y: auto;
+}
+
+header:first-of-type{
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    flex-basis: auto;
+    flex-direction: row;
+    overflow-y:auto;
+}
+
+a:visited{
+    color: #0000EE;
+}
+
+.card > header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.pricing{
+    flex-flow: wrap row;
+    flex-basis: 450px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card{
+    flex-basis: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.gallery img{
+    border: solid 10px #50c7c7;
+    margin: 10px;
+    width: 300px;
+}
+
+.logo img{
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 50px;
+    flex-grow: 425px;
+    animation-name: grow;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    position: sticky;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    text-align: center;
+    flex-direction: row;
+    overflow-y:auto;
+}
+
+@media screen and (min-width: 850px){
+header:first-of-type{
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.nav_links{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.class{
+    display: flex;
+    size: 250px;
+
+}
+
+}
+
+@media print{
+body{
+    background-image:none;
+}
+
+.nav_links{
+    display: flex;
+    justify-content: space-around;   
+}
+
+.pricing{
+    align-items: flex-end;
+}
+
+.class{
+    border: solid 2px #45ADDD;
+    flex-basis: 250px;
+}
+
+#gallery{
+    display: none;
+}
+
+li { 
+    background: url(images/thumbs-up.png) no-repeat left top; 
+    list-style: none; }
+
+}
+
+@keyframes logo{
+    from {opacity: 0; width: 50px;}
+    to {opacity: 1; width: 425px;}
+}
