@@ -16,19 +16,11 @@ nav ul li a:visited{
 }
 
 header{
-    flex-flow: wrap row;
-    justify-content: flex-start;
-    position: sticky;
-    align-items: flex-start;
-}
-
-header:first-of-type{
-    position: sticky;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-basis: auto;
-    flex-direction: row;
-    overflow-y:auto;
+    align-items: center;
+    position: sticky;
 }
 
 .pricing{
