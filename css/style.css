@@ -8,14 +8,13 @@ header{
     flex-flow: wrap column;
     justify-content: flex-start;
     position: sticky;
-    }
+}
 
 .nav_links{
-    flex-wrap: wrap column;
-    justify-content: flex-end;
-    flex-basis: auto;
-    flex-direction: row;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 header:first-of-type{
@@ -27,16 +26,11 @@ header:first-of-type{
     overflow-y:auto;
 }
 
-a:visited{
+nav ul li a:visited{
     color: #0000EE;
 }
 
 .card > header{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: #288088;
     border: 2px solid #45ADAD;
     padding-top: 20px;
@@ -46,25 +40,25 @@ a:visited{
 }
 
 .pricing{
-    flex-flow: wrap row;
+    display: flex;
+    flex-flow: wrap column;
     flex-basis: 450px;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .card{
     flex-basis: 450px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-self: flex-start;
 }
 
 .gallery{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-flow: wrap row;
     justify-content: center;
+    align-items: center;
 }
 
 .gallery img{
@@ -73,33 +67,29 @@ a:visited{
     width: 300px;
 }
 
-.logo img{
-    display: flex;
-    flex-flow: row wrap;
-    flex-basis: 50px;
-    flex-grow: 425px;
+#logo{
     animation-name: grow;
-    animation-duration: 5s;
     animation-iteration-count: 1;
-    position: sticky;
-    display: flex;
-    justify-content: flex-start;
-    align-items: stretch;
-    text-align: center;
-    flex-direction: row;
-    overflow-y:auto;
+    animation-duration: 5s;
+}
+
+@keyframes grow{
+    from {opacity: 0; width: 50px;}
+    to {opacity: 1; width: 425px;}
 }
 
 @media screen and (min-width: 850px){
-header:first-of-type{
+header{
     display: flex;
-    justify-content: flex-start;
-
+    flex-flow: wrap row;
+    justify-content: space-between;
+    left: 0;
+    right: 0;
+    align-content: flex-start;
 }
 
 .nav_links{
-    display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
 }
 
 .class{
@@ -108,38 +98,67 @@ header:first-of-type{
 
 }
 
+body > header{
+    position: sticky;
+    top: 0px;
+}
+
+.card{
+    display: flex;
+    flex-basis: 250px;
+}
+
+}
+
+@media (prefers-reduced-motion:reduct){
+    #logo{
+        animation:none;
+    }
 }
 
 @media print{
 body{
     background-image:none;
+    background-color: #f1f1f1;
+    font-family: serif;
 }
 
 .nav_links{
     display: flex;
     justify-content: space-around;   
+    flex-direction: row;
+    column-gap: 175px;
 }
 
 .pricing{
     align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap
 }
 
-.class{
-    border: solid 2px #45ADDD;
+.card{
+    display: flex;
+    border: 2px solid #45ADDD;
     flex-basis: 250px;
+    flex-wrap: nowrap;
+}
+
+.card ul li:nth-child(even)::after {
+    content: "\1F44D";
+}
+
+.card ul li:nth-child(odd)::before {
+    content: "\1F44D";
 }
 
 #gallery{
     display: none;
 }
 
-li { 
-    background: url(images/thumbs-up.png) no-repeat left top; 
-    list-style: none; }
-
+.gallery{
+    display: none;
 }
 
-@keyframes logo{
-    from {opacity: 0; width: 50px;}
-    to {opacity: 1; width: 425px;}
+
 }
